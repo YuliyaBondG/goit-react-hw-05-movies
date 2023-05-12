@@ -1,9 +1,20 @@
-import { Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Home from '../pages/Home';
+import Movies from '../pages/Movies';
 
 export const App = () => {
   return (
     <div>
-      <Routes></Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:movieId" element={<MovieDetails />} />
+        <Route path="cast" element={<Cast />} />
+        <Route path="reviews" element={<Reviews />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </div>
   );
 };
+
+export default App;
